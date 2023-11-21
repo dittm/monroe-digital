@@ -1,14 +1,14 @@
-a.nav-link, a.nav-link.active, a.nav-link.dropdown-toggle, a.dropdown-item, a {
+/* a.nav-link, a.nav-link.active, a.nav-link.dropdown-toggle, a.dropdown-item, a {
     color: #000 !important;
-} 
+}  */
 
 a.li {
     color: #000 !important;
 }
 
-a.dropdown-item:hover {
+/* a.dropdown-item:hover {
     color: #fff !important;
-}
+} */
 
 .btn-secondary {
     color: #fff !important;
