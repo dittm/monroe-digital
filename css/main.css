@@ -13,3 +13,12 @@ a.li {
 .btn-secondary {
     color: #fff !important;
 }
+
+
+h1 {
+    padding: 0.5em;
+}
+
+.cards {
+    padding: 1em;
+}
