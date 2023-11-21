@@ -1,0 +1,80 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title data-template="config:app-title">mmd</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta data-template="config:app-meta"/>
+    <link rel="shortcut icon" href="resources/images/exist_icon_16x16.ico"/>
+    <link rel="stylesheet" type="text/css" href="../resources/css/exist-2.2.css"/>
+    <link rel="stylesheet" type="text/css" href="../resources/css/style.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body id="grey-top">
+<nav class="navbar navbar-expand-lg" style="background-color: #9EB384; padding-top: 20px; padding-bottom: 20px;">
+            <div class="container-fluid" style="font-size: larger;">
+                <a class="navbar-brand" href="index.html"/>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"/>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="project.html">Project</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mmd.html">Monroe</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="toc.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Werke
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="toc.html">Collection</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="ft_search.html">KWIC</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="kontext.html">Timeline</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kontakt.html">Kontakt</a>
+                        </li>
+                    </ul>
+                    <img class="d-flex ms-auto" src="../resources/images/signature.png" height="62" title="Signatur Monroe" alt="Signatur Monroe"/>
+                </div>
+            </div>
+        </nav>
+        
+        
+        <div class="row" style="padding-top: 1.5rem; margin-left: 10em; margin-right: 10em;">
+    <!-- Your example div where OpenSea Dragon will be embedded -->
+    <div id="openseadragon1" style="width: 800px; height: 600px;"/>
+</div>
+        
+        <div>
+        <div id="content" class="row" style="padding-top: 1.5rem; margin-left: 10em; margin-right: 10em;"/>
+</div>
+
+
+
+
+<footer class="py-3 my-4" style="background-color: #9EB384;margin-bottom: 0px !important;padding-bottom: 20px !important;padding-top: 35px !important;">
+            <p class="text-center footer-info">2023 Christina Dittmann | Digital Editions</p>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"/>
+        <script src="../resources/osd/openseadragon.min.js"/>
+        <script>
+        OpenSeadragon({
+            id: 'openseadragon1',
+            prefixUrl: '../resources/osd/images/',
+            tileSources: 'https://openseadragon.github.io/example-images/duomo/duomo.dzi'
+        });
+    </script>
+</body>
+</html>
