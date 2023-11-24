@@ -1,40 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #818FB4;">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+<body>
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-light" style="background-color: #818FB4;">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" id="navbarToggle" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="project/project.html">Project</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="marilyn-monroe.html">Marilyn</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="timeline.html">Timeline</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="about" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Works
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="poems.html">Poems</a></li>
-                  <li><a class="dropdown-item" href="letters.html">Letters</a></li>
-                  <li><a class="dropdown-item" href="recipes.html">Recipes</a></li>
-                  <li><a class="dropdown-item" href="all.html">All</a></li>
-                </ul>
-              </li>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav" id="dynamicNav">
+                <!-- Nav links will be dynamically added here -->
             </ul>
-          </div>
-          <div class="navbar-text">
-            <a class="navbar-brand" href="#"><img src="https://raw.githubusercontent.com/dittm/monroe-digital/main/images/signature.png" width="150px" alt="Marilyn Monroe Signature"></a>
-          </span>
         </div>
-      </nav>
+        <div class="navbar-text">
+            <a class="navbar-brand" href="#"><img src="https://raw.githubusercontent.com/dittm/monroe-digital/main/images/signature.png" width="150px" alt="Marilyn Monroe Signature"></a>
+        </div>
+    </div>
+</nav>
+
+<!-- Your content goes here -->
+<script>
+    $(document).ready(function() {
+        // Fetch the navigation data from JSON file
+        $.getJSON('/../json/navigation.json', function(data) {
+            var pages = data; // Store the retrieved data
+
+            // Function to build dynamic navigation
+            function buildNavigation() {
+                var basePath = window.location.pathname; // Get the current base path
+
+                var navItems = '';
+                pages.forEach(function(page) {
+                    // Create a URL object for the page URL
+                    var pageURL = new URL(page.url, window.location.origin);
+
+                    // Construct the final URL by combining the base path with the page's relative URL
+                    var finalURL = pageURL.pathname;
+
+                    if (page.subPages) {
+                        var subMenu = '<li class="nav-item dropdown">' +
+                            '<a class="nav-link dropdown-toggle" href="' + finalURL + '" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">' + page.label + '</a>' +
+                            '<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">';
+                        page.subPages.forEach(function(subPage) {
+                            var subPageURL = new URL(subPage.url, window.location.origin);
+                            var finalSubPageURL = subPageURL.pathname;
+                            subMenu += '<li><a class="dropdown-item" href="' + finalSubPageURL + '">' + subPage.label + '</a></li>';
+                        });
+                        subMenu += '</ul></li>';
+                        navItems += subMenu;
+                    } else {
+                        navItems += '<li class="nav-item"><a class="nav-link" href="' + finalURL + '">' + page.label + '</a></li>';
+                    }
+                });
+                $('#dynamicNav').html(navItems);
+            }
+
+            // Initial build of navigation
+            buildNavigation();
+        });
+
+        // Toggle navigation on button click
+        $('#navbarToggle').click(function() {
+            $('#navbarNavDropdown').toggleClass('show');
+        });
+    });
+</script>
+
+</body>
 </html>

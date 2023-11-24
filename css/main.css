@@ -22,3 +22,34 @@ h1 {
 .cards {
     padding: 1em;
 }
+.thumbnail-icon {
+    height: 100px; /* Set the desired height */
+    /* You can add other styles like width, object-fit, etc., as needed */
+}
+
+/* Apply styles to the table */
+#xmlTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  /* Style for table rows */
+  #xmlTable tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Style for table cells */
+  #xmlTable td {
+    padding: 8px;
+  }
+  
+  /* Alternate row background color */
+  #xmlTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+/* Style the first column (headers) */
+#xmlTable td:first-child {
+    background-color: #f2f2f2;
+  }
