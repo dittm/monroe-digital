@@ -30,8 +30,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
                 <div id="letter1" style="width: 800px; height: 600px;"></div>
                 <div style="padding: 16px;" class="btn-group" role="group">
                   <button type="button" class="btn btn-outline-dark" onclick="openImages()"><i class="fa-solid fa-download" style="color: #212529;"></i> <a target="_blank" class="download-images">Image</a></button>
-                  <button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-download" style="color: #212529;"></i> <a href="/../data/letter1.xml" target="_blank" class="download-xml">TEI/XML</a></button>
-                  <button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-download" style="color: #212529;"></i> <a href="/../metadata/letter1_dc.xml" target="_blank" class="download-dc">DC Metadata</a></button>
+                  <button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-download" style="color: #212529;"></i> <a href="/../data/note1.xml" target="_blank" class="download-xml">TEI/XML</a></button>
+                  <button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-download" style="color: #212529;"></i> <a href="/../metadata/note1_dc.xml" target="_blank" class="download-dc">DC Metadata</a></button>
                 </div>
               </div>
               <div class="col" style="background-color: #efefef;">
@@ -54,10 +54,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     <!-- settings for downloading images -->
     <script>
       function openImages() {
-  window.open('/../images/letter1_recto.jpg', '_blank');
+  window.open('/../images/note1_recto.jpg', '_blank');
   
   setTimeout(function() {
-    window.open('/../images/letter1_verso.jpg', '_blank');
+    window.open('/../images/note1_verso.jpg', '_blank');
   }, 500);
 }
     </script>
@@ -112,10 +112,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         showFullPageControl: false,
         tileSources:   [{
             type: 'image',
-            url:  '/../images/letter1_recto.jpg'
+            url:  '/../images/note1_recto.jpg'
         },{
             type: 'image',
-            url:  '/../images/letter1_verso.jpg'
+            url:  '/../images/note1_verso.jpg'
         }]
   })
   </script>
@@ -135,7 +135,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     }
   
     function displayLetter() {
-      var letterXml = loadXMLDoc("/../data/letter1.xml");
+      var letterXml = loadXMLDoc("/../data/note.xml");
       var metadataXml = loadXMLDoc("/../metadata/letter1_dc.xml");
       var xsl = loadXMLDoc("/../xslt/letter.xsl");
 

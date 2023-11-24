@@ -21,6 +21,12 @@
         </del>
     </xsl:template>
 
+    <xsl:template match="tei:hi[@rend = 'underline']">
+        <u>
+            <xsl:apply-templates/>
+        </u>
+    </xsl:template>
+
     <xsl:template match="tei:lb">
             <xsl:apply-templates/>
         <br/>

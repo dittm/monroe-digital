@@ -53,3 +53,13 @@ h1 {
 #xmlTable td:first-child {
     background-color: #f2f2f2;
   }
+
+  .accordion-header button, .accordion-header button:focus  {
+    color: rgb(104, 103, 103); /* Change the text color to gray */
+    background-color: #eeeeee; /* Change the background color to a light gray */
+    border-color: rgb(104, 103, 103); /* Change the border color to gray */
+}
+
+.accordion-header button:focus {
+box-shadow: 0 0 0 0.25rem #818FB4;
+}
