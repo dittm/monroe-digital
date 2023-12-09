@@ -1,3 +1,3 @@
 # monroe-digital
 
-Marilyn Unveiled: A Digital Anthology
+Monroe Unveiled: A Digital Anthology
