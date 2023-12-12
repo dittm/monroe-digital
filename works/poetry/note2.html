@@ -29,9 +29,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
               <div class="col">
                 <div id="note2" style="width: 800px; height: 600px;"></div>
                 <div style="padding: 16px;" class="btn-group" role="group">
-                  <button type="button" class="btn btn-outline-dark" onclick="openImages()"><i class="fa-solid fa-download" style="color: #212529;"></i> <a target="_blank" class="download-images">Image</a></button>
-                  <button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-download" style="color: #212529;"></i> <a href="/../data/note1.xml" target="_blank" class="download-xml">TEI/XML</a></button>
-                  <button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-download" style="color: #212529;"></i> <a href="/../metadata/note1_dc.xml" target="_blank" class="download-dc">DC Metadata</a></button>
+                  <button type="button" class="btn btn-outline-dark" ><i class="fa-solid fa-download" style="color: #212529;"></i> <a target="_blank" class="download-images" href="/../images/note2_recto.jpg">Image</a></button>
+                  <button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-download" style="color: #212529;"></i> <a href="/../data/note2.xml" target="_blank" class="download-xml">TEI/XML</a></button>
+                  <button type="button" class="btn btn-outline-dark"><i class="fa-solid fa-download" style="color: #212529;"></i> <a href="/../metadata/note2_dc.xml" target="_blank" class="download-dc">DC Metadata</a></button>
                 </div>
               </div>
               <div class="col" style="background-color: #efefef;">
@@ -50,17 +50,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
           </main>
     
     <div id="footer"></div>
-
-    <!-- settings for downloading images -->
-    <script>
-      function openImages() {
-  window.open('/../images/note1_recto.jpg', '_blank');
-  
-  setTimeout(function() {
-    window.open('/../images/note1_verso.jpg', '_blank');
-  }, 500);
-}
-    </script>
 
     <!-- button to toggle between transcription and metadata -->
     <script>
@@ -133,7 +122,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
   
     function displayLetter() {
       var letterXml = loadXMLDoc("/../data/note2.xml");
-      var metadataXml = loadXMLDoc("/../metadata/letter1_dc.xml");
+      var metadataXml = loadXMLDoc("/../metadata/note2_dc.xml");
       var xsl = loadXMLDoc("/../xslt/letter.xsl");
 
       var xsltProcessor = new XSLTProcessor();
